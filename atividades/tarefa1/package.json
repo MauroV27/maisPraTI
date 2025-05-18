@@ -1,0 +1,17 @@
+{
+	"name": "tarefa1",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"tarefa-1": "node ./index.js"
+	},
+	"keywords": [],
+	"author": "Mauro Victor",
+	"license": "ISC",
+	"description": "",
+	"engines": {
+		"npm": "10.9.1",
+		"node": "18.x"
+	}
+}
