@@ -1,0 +1,17 @@
+{
+	"name": "tarefa2",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "node ./testes/testes.js"
+	},
+	"keywords": [],
+	"author": "Mauro Victor",
+	"license": "ISC",
+	"description": "",
+	"engines": {
+		"npm": "10.9.1",
+		"node": "18.x"
+	}
+}
