@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Atividade 3 - Tarefa 3 - Mauro Victor</title>
+		<style>
+			main {
+				margin: auto;
+				width: 420px;
+			}
+
+			h1 {
+				width: 100%;
+				text-align: center;
+				margin: 20px 0 0 0;
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+
+			label {
+				margin-top: 12px;
+				margin-bottom: 4px;
+			}
+
+			textarea {
+				field-sizing: content;
+				min-width: 100%;
+				max-width: 100%;
+
+				min-height: 90px;
+				max-height: 90px;
+			}
+
+			input[type="submit"] {
+				margin-top: 20px;
+				height: 32px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Formulário</h1>
+			<form action="#" method="post">
+				<label for="inpt-name">Nome</label>
+				<input type="text" name="inpt-name" id="inpt-name" />
+
+				<label for="inpt-email">Email</label>
+				<input type="email" name="inpt-email" id="inpt-email" />
+
+				<label for="inpt-addres">Endereço</label>
+				<input type="text" name="inpt-addres" id="inpt-addres" />
+
+				<div class="feedback-type-container">
+					<h3>Tipo de feedback</h3>
+					<input type="radio" id="positive" name="feedback-type" />
+					<label for="positive">Positivo</label>
+
+					<input type="radio" id="neutral" name="feedback-type" />
+					<label for="neutral">Neutro</label>
+
+					<input type="radio" id="negative" name="feedback-type" />
+					<label for="negative">Negativo</label>
+				</div>
+
+				<label for="inpt-feedback-text">Feedback textual</label>
+				<textarea
+					type="text"
+					name="inpt-feedback-text"
+					id="inpt-feedback-text"
+					rows="5"
+				></textarea>
+
+				<input type="submit" value="Enviar" />
+			</form>
+		</main>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const form = document.querySelector("form");
+
+				form.addEventListener("submit", function (event) {
+					event.preventDefault();
+
+					const nome = document.getElementById("inpt-name").value;
+					const email = document.getElementById("inpt-email").value;
+					const endereco =
+						document.getElementById("inpt-addres").value;
+					const feedbackTexto =
+						document.getElementById("inpt-feedback-text").value;
+
+					const tipo =
+						document.querySelector(
+							'input[name="feedback-type"]:checked'
+						)?.value || "Nenhum selecionado";
+
+					console.log("--------------------------");
+					console.log("Dados do Formulário:");
+					console.log("Nome:", nome);
+					console.log("Email:", email);
+					console.log("Endereço:", endereco);
+					console.log("Tipo de Feedback:", tipo);
+					console.log("Mensagem:", feedbackTexto);
+				});
+			});
+		</script>
+	</body>
+</html>
