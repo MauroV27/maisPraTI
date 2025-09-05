@@ -1,0 +1,123 @@
+.movieCardContainer {
+	position: relative;
+	width: 220px;
+	height: 300px;
+	overflow: hidden;
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-surface);
+	color: var(--color-text-on-surface);
+	cursor: pointer;
+}
+
+.imageWrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.movieImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: filter 0.3s ease;
+}
+
+.imageOverlay {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.movieInfo {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 12px;
+	z-index: 2;
+	transition: all 0.3s ease;
+}
+
+.movieCardTitle {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+	color: white;
+	transform: translateY(100%);
+	transition: transform 0.3s ease;
+}
+
+.movieOverview {
+	font-size: 13px;
+	color: white;
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Hover Effects */
+.movieCardContainer:hover .imageOverlay {
+	opacity: 1;
+}
+
+.movieCardContainer:hover .movieCardTitle {
+	transform: translateY(0);
+}
+
+.movieCardContainer:hover .movieOverview {
+	opacity: 1;
+	max-height: 100px; /* Ajuste conforme necessário */
+}
+
+.movieCardTitle {
+	width: 100%;
+
+	text-align: center;
+	margin-bottom: 12px;
+	margin-top: 8px;
+
+	font-size: 12px;
+}
+
+.favoriteButton {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	font-size: 24px;
+	cursor: pointer;
+	padding: 8px;
+	border-radius: 50%;
+	transition: transform 0.2s ease, color 0.3s ease, background-color 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.favoriteButton:hover {
+	transform: scale(1.1);
+	color: #ff6f61;
+}
+
+.favoriteButton:active {
+	transform: scale(1);
+}
+
+.favoriteButton.liked {
+	color: #ff6f61;
+	background-color: rgba(255, 111, 97, 0.1);
+}
+
+.favoriteButton.heart {
+	font-size: 28px;
+}
+
+.favoriteButton.heart.liked {
+	color: #ff6f61;
+}

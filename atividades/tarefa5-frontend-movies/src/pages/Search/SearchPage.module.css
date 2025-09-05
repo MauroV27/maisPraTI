@@ -1,0 +1,120 @@
+.searchPageContainer {
+	background-color: var(--color-background);
+	color: #fff;
+
+	min-height: calc(100vh - 64px);
+	max-height: calc(100vh - 64px);
+
+	padding: 3rem 1rem;
+	font-family: sans-serif;
+}
+
+.searchBar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.searchInput {
+	padding: 0.8rem;
+	border: 2px solid var(--color-primary);
+	border-radius: 8px;
+	background-color: #333;
+	color: #fff;
+	font-size: 1.1rem;
+	margin-right: 1rem;
+	width: 80%;
+	max-width: 500px;
+	transition: border 0.3s ease;
+}
+
+.searchInput:focus {
+	border-color: var(--color-primary-variant);
+	outline: none;
+}
+
+.searchButton {
+	padding: 0.8rem 1.5rem;
+	background-color: var(--color-primary);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+	background-color: var(--color-primary-variant);
+}
+
+.resultsContainer {
+	gap: 1.5rem;
+	justify-items: center;
+}
+
+.noResults {
+	text-align: center;
+	font-size: 1.5rem;
+	color: #ccc;
+}
+
+.loaderContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+	width: 100%;
+}
+
+.loader {
+	width: 80px;
+	height: 80px;
+	position: relative;
+}
+
+.circular {
+	animation: rotate 2s linear infinite;
+	width: 80px;
+	height: 80px;
+}
+
+.path {
+	stroke: var(--color-primary);
+	stroke-linecap: round;
+	animation: dash 1.5s ease-in-out infinite, colorShift 4s linear infinite;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
+	}
+}
+
+@keyframes colorShift {
+	0% {
+		stroke: var(--color-primary);
+	}
+	50% {
+		stroke: var(--color-primary-variant);
+	}
+	100% {
+		stroke: var(--color-primary);
+	}
+}

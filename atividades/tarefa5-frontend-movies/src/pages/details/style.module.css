@@ -1,0 +1,199 @@
+* {
+	scrollbar-width: 0 !important;
+	scrollbar-color: var(--color-background);
+}
+
+.LoadingPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	max-height: calc(100vh - 64px);
+	background-color: var(--color-background);
+}
+
+.loader {
+	width: 100%;
+	height: 80px;
+	position: relative;
+}
+
+/* Circulo base */
+.circular {
+	animation: rotate 2s linear infinite;
+	width: 80px;
+	height: 80px;
+}
+
+/* Circulo com stroke animado */
+.path {
+	stroke: var(--color-primary);
+	stroke-linecap: round;
+	animation: dash 1.5s ease-in-out infinite, colorShift 4s linear infinite;
+}
+
+/* Gira o svg inteiro */
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Anima o traçado do círculo */
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
+	}
+}
+
+/* Troca sutil de cor para parecer "vivo" */
+@keyframes colorShift {
+	0% {
+		stroke: var(--color-primary);
+	}
+	50% {
+		stroke: var(--color-primary-variant);
+	}
+	100% {
+		stroke: var(--color-primary);
+	}
+}
+
+.detailsPageContainer {
+	color: #fff;
+	font-family: sans-serif;
+
+	margin: 0 auto;
+	padding-bottom: 3rem;
+
+	background-color: #222;
+}
+
+.hero {
+	position: relative;
+	height: 60vh;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: flex-end;
+}
+
+.heroOverlay {
+	display: flex;
+	align-items: flex-end;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+	padding: 2rem;
+	width: 100%;
+}
+
+.poster {
+	width: 200px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px #000;
+	margin-right: 2rem;
+}
+
+.info {
+	max-width: 60%;
+}
+
+.tagline {
+	font-style: italic;
+	color: #aaa;
+}
+
+.rating {
+	margin-top: 0.5rem;
+	font-size: 1.1rem;
+}
+
+.genres,
+.meta {
+	margin-top: 0.3rem;
+	color: #ccc;
+}
+
+.favoriteButton {
+	background-color: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+
+	margin-top: 20px;
+
+	padding: 8px 16px;
+	font-size: 16px;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s, transform 0.2s;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	outline: none;
+}
+
+.favoriteButton:hover {
+	background-color: #ff6f61;
+	color: #fff;
+	transform: scale(1.05);
+}
+
+.favoriteButton:active {
+	transform: scale(1);
+}
+
+.favoriteButton:disabled {
+	background-color: #ccc;
+	color: #666;
+	cursor: not-allowed;
+}
+
+.favoriteButton.heart {
+	font-size: 18px;
+}
+
+.favoriteButton.heart.liked {
+	color: #ff6f61;
+}
+
+.favoriteButton.heart:not(.liked) {
+	color: #fff;
+}
+
+.section {
+	padding: 2rem;
+}
+
+.section h2 {
+	margin-bottom: 1rem;
+	border-bottom: 2px solid #444;
+	padding-bottom: 0.5rem;
+}
+
+.companies {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.company img {
+	max-height: 40px;
+	object-fit: contain;
+	background: #fff;
+	padding: 4px;
+	border-radius: 4px;
+}
+
+.company span {
+	background: #333;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+}
