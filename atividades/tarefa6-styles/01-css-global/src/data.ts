@@ -1,0 +1,47 @@
+export const products = [
+	{
+		id: 1,
+		title: "Produto incrível com nome longo",
+		price: 99,
+		rating: 4,
+		tag: "Novo",
+		image: "https://placehold.co/300x200",
+	},
+	{
+		id: 2,
+		title: "Produto 2",
+		price: 49,
+		rating: 3,
+		tag: "Promo",
+		image: "https://placehold.co/300x200",
+	},
+	{
+		id: 3,
+		title: "Produto 3",
+		price: 129,
+		rating: 5,
+		image: "https://placehold.co/300x200",
+	},
+	{
+		id: 4,
+		title: "Produto 4",
+		price: 19,
+		rating: 2,
+		image: "https://placehold.co/300x200",
+	},
+	{
+		id: 5,
+		title: "Produto 5",
+		price: 79,
+		rating: 4,
+		tag: "Novo",
+		image: "https://placehold.co/300x200",
+	},
+	{
+		id: 6,
+		title: "Produto 6",
+		price: 59,
+		rating: 5,
+		image: "https://placehold.co/300x200",
+	},
+];
