@@ -1,0 +1,14 @@
+.Navbar {
+	background: var(--surface);
+	box-shadow: var(--shadow-sm);
+	display: flex;
+	justify-content: space-between;
+	padding: 0.75rem;
+	z-index: 50;
+}
+
+.NavbarThemeButton {
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
+}

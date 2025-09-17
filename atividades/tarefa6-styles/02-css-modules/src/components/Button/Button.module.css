@@ -1,0 +1,36 @@
+.button {
+	border-radius: var(--radius);
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background var(--transition), color var(--transition),
+		border var(--transition);
+}
+
+.button:focus {
+	outline: 3px solid #2563eb80;
+	outline-offset: 2px;
+}
+
+.button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.button-solid {
+	background: var(--color-primary);
+	color: white;
+	border: none;
+}
+
+.button-outline {
+	background: transparent;
+	color: var(--color-primary);
+	border: 2px solid var(--color-primary);
+}
+
+.button-ghost {
+	background: transparent;
+	border: none;
+	color: var(--color-primary);
+}
